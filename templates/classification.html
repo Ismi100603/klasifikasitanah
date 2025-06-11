@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Images Uploader (Drag &amp; browse) </title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div id="uploadArea" class="upload-area">
+    <div class="upload-area__header">
+      <h1 class="upload-area__title">Unggah Gambar Tanah Gambut</h1>
+      <p class="upload-area__paragraph">
+        File harus berupa gambar dengan
+        <strong class="upload-area__tooltip">
+          format
+          <span class="upload-area__tooltip-data"></span>
+        </strong>
+      </p>
+    </div>
+    <div id="dropZoon" class="upload-area__drop-zoon drop-zoon">
+      <span class="drop-zoon__icon">
+        <i class='bx bxs-file-image'></i>
+      </span>
+      <p class="drop-zoon__paragraph">Drag & Drop Gambar di sini</p>
+      <span id="loadingText" class="drop-zoon__loading-text">Tunggu sebentar</span>
+      <img src="" alt="Preview Image" id="previewImage" class="drop-zoon__preview-image" draggable="false">
+      <input type="file" id="fileInput" class="drop-zoon__file-input" accept="image/*">
+    </div>
+    <div id="fileDetails" class="upload-area__file-details file-details">
+      <h3 class="file-details__title">Gambar telah diunggah</h3>
+      <div id="uploadedFile" class="uploaded-file">
+        <div class="uploaded-file__icon-container">
+          <i class='bx bxs-file-blank uploaded-file__icon'></i>
+          <span class="uploaded-file__icon-text"></span>
+        </div>
+        <div id="uploadedFileInfo" class="uploaded-file__info">
+          <span class="uploaded-file__name">Project 1</span>
+          <span class="uploaded-file__counter">0%</span>
+        </div>
+      </div>
+      <div class="row">
+        <a class="button" id="submit">Klasifikasi</a>
+        <a href="/klasifikasi" class="button">Reset</a>
+      </div>
+    </div>
+    <a href="/" class="button">Kembali</a>
+  </div>
+  <div class="upload-area">
+    <h1 class="upload-area__title">Hasil Klasifikasi Tanah Gambut</h1>
+    <p style="display: none;" id="text_result">Jenis tanah gambut: <span id="class"></span>. Kemungkinan: <span id="persentase"></span>%</p>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script  src="{{ url_for('static', filename='script.js') }}"></script>
+  <script  src="{{ url_for('static', filename='ajax.js') }}"></script>
+</body>
+</html>
