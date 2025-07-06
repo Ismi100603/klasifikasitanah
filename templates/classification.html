@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Images Uploader (Drag &amp; browse) </title>
+  <title>Klasifikasi Tanah Gambut</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
@@ -50,7 +50,10 @@
   </div>
   <div class="upload-area">
     <h1 class="upload-area__title">Hasil Klasifikasi Tanah Gambut</h1>
-    <p style="display: none;" id="text_result">Jenis tanah gambut: <span id="class"></span>. Kemungkinan: <span id="persentase"></span>%</p>
+    <div style="display: none;" id="text_result">
+      <h3 id="class"></h3>
+      <p>Kemungkinan: <span id="persentase"></span>%</p>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script  src="{{ url_for('static', filename='script.js') }}"></script>

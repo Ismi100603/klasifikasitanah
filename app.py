@@ -6,7 +6,7 @@ from flask import request, jsonify
 import os
 from werkzeug.utils import secure_filename
 app = Flask(__name__)
-model = load_model('model/model.h5')
+model = load_model('model/model.keras', compile=False)
 
 @app.route('/')
 def home():
@@ -22,14 +22,14 @@ def klasifikasi():
 
 # Menguji model dengan input gambar
 def load_and_preprocess_image(image_path):
-    img = load_img(image_path, target_size=(128, 128))  # Resize gambar ke ukuran yang sesuai
+    img = load_img(image_path, target_size=(224, 224))  # Resize gambar ke ukuran yang sesuai
     img = np.array(img) / 255.0  # Normalisasi
     img = np.expand_dims(img, axis=0)  # Tambahkan dimensi batch
     return img
 
 @app.route('/proses', methods=['POST'])
 def proses():
-    labels = ['Fibrik', 'Hemik', 'Saprik']
+    labels = ['Bukan Tanah Gambut','Fibrik', 'Hemik', 'Saprik']
     
     if 'image' not in request.files:
         return jsonify({'error': 'Tidak ada file yang dikirim'}), 400

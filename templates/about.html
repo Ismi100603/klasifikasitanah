@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <html lang="en" >
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="https://public.codepenassets.com/css/reset-2.0.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="bg-index">
+        <a href="/" class="button">Kembali</a>
+        <div class="tab-block" id = "tab-block"> 
+            <ul class="tab-mnu">
+                <li class = "active" >Tanah Gambut</li>
+                <li>Fibrik</li>
+                <li>Hemik</li>
+                <li>Saprik</li>
+            </ul>
+            <div class="tab-cont">
+                <div class="tab-pane"><p>Dalam taksonomi tanah, tanah gambut termasuk dalam Ordo Histosol, yang berasal dari bahasa Yunani "histos", yang berarti "jaringan." Tanah gambut memiliki lapisan organik yang tebal (lebih dari 40 cm) dan tingkat bahan organik yang tinggi.</p></div>
+                <div class="tab-pane"><p>Gambut Fibrik adalah gambut yang paling muda dan belum matang dengan kandungan serat, kandungan air lebih dari 850%, serta warna kuning kecoklatan.</p></div>
+                <div class="tab-pane"><p>Gambut Hemik adalah gambut transisi dengan tingkat kematangan sedang, memiliki kandungan serat antara 33–66%, bobot isi 0,1–0,19 g/cm³, kandungan air 450–850%, dan warna coklat kelabu hingga coklat kemerahan.</p></div>
+                <div class="tab-pane"><p>Gambut Saprik adalah gambut yang paling matang, dicirikan oleh kandungan serat paling rendah, dan warna gelap kehitam-hitaman.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script  src="{{ url_for('static', filename='ajax.js') }}"></script>
+  </body>
+</html>
